@@ -1,12 +1,13 @@
 #name: download_clc
-#date: Wed Feb 14 14:32:21 2024  
+#date: Feb 25 2024  
 #author: Tillman Reuter
+#R version: 4.3.2
 
 # READ ME ######################################################################
 '
-automated download of Clorine Land Use Cover data
+automated download of Clorine Land Cover data
 2000, 2006, 2012, and 2018
-of Denmark, Germany, Sweden, Spain and Portugal
+of Denmark, Germany, Sweden, Spain, and Portugal
 
 ' 
 par(mfrow=c(1,1))
@@ -16,25 +17,25 @@ Sys.setenv(LANG = "en")
 # LOAD AND INSTALL PACKAGES ####################################################
 
 library(openssl)
-library(jose) #for jwt creation
+library(jose)
 library(jsonlite)
-library(httr) #for handling request
+library(httr)
 library(readr)
 library(utils)
 library(jsonlite)
 library(terra)
 
 #no working directory, I work directly in an R Project
+#otherwise create a working directory
 
-# setwd("C:/Users/hartig3/ownCloud - moritz.hartig@uni-goettingen.de@owncloud.gwdg.de/05_Exchange/01_MAE/SHK_Exchange/08_Reuter/01_Copernicus_CORINE_Land_Cover/02_Code")
-
-'
-manually create an account on https://land.copernicus.eu usin EU-Login
-request an API token on your profile tab (https://land.copernicus.eu/en/profile#api_tokens)
-copy the text of the API-token (you only see once) in the line of code below between the ''
+#setwd("")
 
 '
+manually create an account on https://land.copernicus.eu using EU-Login.
+request an API token on your profile tab (https://land.copernicus.eu/en/profile#api_tokens).
+copy the text of the API-token (it is only displayed once) in the line of code below between the ''.
 
+'
 
 # MAIN #########################################################################
 
@@ -187,7 +188,7 @@ response <- POST(url, body = request_body_2018, encode = "json", add_headers(hea
 TaskID_2018 <- content(response)$TaskIds[[1]]$TaskID #download task ID
 
 
-# Status of download request ###############################################################
+# status of download request ###############################################################
 
 #url to check progress on download requests
 url <- "https://land.copernicus.eu/api/@datarequest_search?"
