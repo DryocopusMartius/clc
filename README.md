@@ -46,14 +46,22 @@ Since the datasets are regularly reviewed and updated, file structure or file na
   ## Datasets:
   
   https://image.discomap.eea.europa.eu/arcgis/rest/services/Corine/CLC2000_WM/MapServer
+  
   https://image.discomap.eea.europa.eu/arcgis/rest/services/Corine/CLC2006_WM/MapServer
+  
   https://image.discomap.eea.europa.eu/arcgis/rest/services/Corine/CLC2012_WM/MapServer
+  
   https://image.discomap.eea.europa.eu/arcgis/rest/services/Corine/CLC2018_WM/MapServer
   
+  
   https://land.copernicus.eu/api/en/products/corine-land-cover/clc-2000
+  
   https://land.copernicus.eu/api/en/products/corine-land-cover/clc-2006
+  
   https://land.copernicus.eu/api/en/products/corine-land-cover/clc-2012
+  
   https://land.copernicus.eu/api/en/products/corine-land-cover/clc2018 [sic!]
+  
   
   ## API:
   
